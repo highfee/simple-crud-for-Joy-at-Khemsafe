@@ -12,6 +12,7 @@ import { ProductContext } from "../context/ProductsContext";
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
   const { dispatch2 } = useContext(ProductContext);
+  console.log(data.data);
   useEffect(() => {
     setTimeout(
       dispatch2({ type: "ALL_PRODUCTS", payload: { products: data } }),
