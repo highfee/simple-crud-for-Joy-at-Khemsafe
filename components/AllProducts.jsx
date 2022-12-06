@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { ProductContext } from "../../context/ProductsContext";
-import ProductCard from "./ProductCard";
+import { ProductContext } from "../context/ProductsContext";
+
+import ProductCard from "../components/ProductCard";
 const AllProducts = () => {
   const { products } = useContext(ProductContext);
   const [data, setData] = useState([]);

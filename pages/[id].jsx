@@ -1,12 +1,12 @@
-import { useState, useContext } from "react";
-import { products } from "../assets/constants";
+import { useState} from "react";
+
 import { FaArrowLeft } from "react-icons/fa";
 import CurrencyFormat from "react-currency-format";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import EditProgram from "./components/EditProduct";
+import EditProgram from "../components/EditProduct";
 import axios from "axios";
-import { SearchContext } from "../context/searchContext";
+
 const Product = ({ data }) => {
   const router = useRouter();
   const [product, setProduct] = useState(data);

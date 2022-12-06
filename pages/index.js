@@ -1,7 +1,11 @@
 import { useState, useContext, useEffect } from "react";
 import Head from "next/head";
 import { FaPlus } from "react-icons/fa";
-import { AddProduct, AllProducts, SearchBar } from "./components";
+import { AddProduct, AllProducts, SearchBar } from "../components";
+// import AddProduct from "../components/AddProduct";
+// import AllProducts from "../components/AllProducts";
+// import SearchBar from "../components/SearchBar";
+
 import axios from "axios";
 import { ProductContext } from "../context/ProductsContext";
 

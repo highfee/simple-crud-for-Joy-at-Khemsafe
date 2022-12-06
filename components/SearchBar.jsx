@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState, useContext } from "react";
 import { FaSearch } from "react-icons/fa";
-import { SearchContext } from "../../context/searchContext";
-import { ProductContext } from "../../context/ProductsContext.js";
+import { SearchContext } from "../context/searchContext";
+import { ProductContext } from "../context/ProductsContext";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
