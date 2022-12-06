@@ -13,7 +13,7 @@ const SearchBar = () => {
     e.preventDefault();
     dispatch({ type: "NEW_SEARCH", payload: { text: searchTerm } });
     const res = await axios.get(
-      `http://localhost:3000/api/products/?search=${searchTerm}`
+      `https://khemsafe.vercel.app/api/products/?search=${searchTerm}`
     );
     dispatch2({ type: "SEARCHED_PRODUCTS", payload: { products: res.data } });
   };

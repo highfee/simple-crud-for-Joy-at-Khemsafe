@@ -28,7 +28,7 @@ const EditProgram = ({ showModal, setShowModal, product, setProduct }) => {
     setLoading(true);
     try {
       const res = await axios.put(
-        `http://localhost:3000/api/products/${product._id}`,
+        `https://khemsafe.vercel.app/api/products/${product._id}`,
         inputs
       );
       setProduct(res.data);

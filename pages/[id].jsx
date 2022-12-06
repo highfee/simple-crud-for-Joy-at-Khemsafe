@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 
 import { FaArrowLeft } from "react-icons/fa";
 import CurrencyFormat from "react-currency-format";
@@ -65,7 +65,7 @@ const Product = ({ data }) => {
 
 export const getServerSideProps = async (ctx) => {
   const res = await axios.get(
-    `http://localhost:3000/api/products/${ctx.params.id}`
+    `https://khemsafe.vercel.app/api/products/${ctx.params.id}`
   );
   // console.log(res.data);
   return {

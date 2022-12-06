@@ -27,7 +27,7 @@ const AddProduct = ({ showModal, setShowModal }) => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/products",
+        "https://khemsafe.vercel.app/api/products",
         inputs
       );
       if (res) {
