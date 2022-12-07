@@ -10,6 +10,10 @@ const AllProducts = () => {
     console.log(data);
   }, [data, products]);
 
+  if (!data) {
+    return <h1>Nothing to display yet</h1>;
+  }
+
   return (
     <div>
       <header className="text-gray-700 text-2xl font-bold">All Items</header>
