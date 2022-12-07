@@ -2,17 +2,13 @@ import { useState, useContext, useEffect } from "react";
 import Head from "next/head";
 import { FaPlus } from "react-icons/fa";
 import { AddProduct, AllProducts, SearchBar } from "../components";
-// import AddProduct from "../components/AddProduct";
-// import AllProducts from "../components/AllProducts";
-// import SearchBar from "../components/SearchBar";
-
 import axios from "axios";
 import { ProductContext } from "../context/ProductsContext";
 
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
   const { dispatch2 } = useContext(ProductContext);
-  console.log(data.data);
+  console.log(data);
   useEffect(() => {
     dispatch2({ type: "ALL_PRODUCTS", payload: { products: data } });
   }, [dispatch2, data]);
