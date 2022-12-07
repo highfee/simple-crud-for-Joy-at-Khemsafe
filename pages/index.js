@@ -14,7 +14,7 @@ export default function Home({ data }) {
   const { dispatch2 } = useContext(ProductContext);
   console.log(data.data);
   useEffect(() => {
-      dispatch2({ type: "ALL_PRODUCTS", payload: { products: data } }),
+    dispatch2({ type: "ALL_PRODUCTS", payload: { products: data } });
   }, [dispatch2, data]);
   return (
     <div>
