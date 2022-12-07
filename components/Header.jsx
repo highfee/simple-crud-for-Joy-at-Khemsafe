@@ -7,7 +7,7 @@ const Header = () => {
         <FaBars />
       </div>
       <div>
-        <h1 className="text-xl">MADAME JOY</h1>
+        <h1 className="text-xl">Khemsafe</h1>
       </div>
     </header>
   );

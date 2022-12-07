@@ -22,7 +22,7 @@ export default function Home({ data }) {
   return (
     <div>
       <Head>
-        <title>JOY</title>
+        <title>Khemsafe</title>
         <meta name="description" content="madame joy simple app" />
       </Head>
       <SearchBar />
