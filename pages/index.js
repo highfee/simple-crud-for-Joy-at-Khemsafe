@@ -26,7 +26,7 @@ export default function Home({ data }) {
       </Head>
       <SearchBar />
       <div className=" mt-3">
-        <AllProducts />
+        <AllProducts data={data} />
       </div>
       <div
         className="h-[40px w-[40px grid p-4 place-items-center bg-white rounded-full shadow-xl shadow-gray-300 fixed right-5 bottom-5 hover:scale-105 cursor-pointer"
