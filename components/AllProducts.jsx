@@ -5,6 +5,7 @@ import ProductCard from "../components/ProductCard";
 const AllProducts = () => {
   const { products } = useContext(ProductContext);
   const [data, setData] = useState([]);
+  console.log(data);
   useEffect(() => {
     setData(products);
   }, [data, products]);
