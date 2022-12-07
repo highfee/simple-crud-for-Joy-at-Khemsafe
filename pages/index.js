@@ -6,13 +6,12 @@ import axios from "axios";
 import { ProductContext } from "../context/ProductsContext";
 
 export default function Home({ data }) {
+  console.log(data);
   const [showModal, setShowModal] = useState(false);
   const { dispatch2 } = useContext(ProductContext);
 
   useEffect(() => {
-    setTimeout(() => {
-      dispatch2({ type: "ALL_PRODUCTS", payload: { products: data } });
-    }, 3000);
+    dispatch2({ type: "ALL_PRODUCTS", payload: { products: data } });
   }, [dispatch2, data]);
 
   if (data.length < 1) {
@@ -44,7 +43,6 @@ export default function Home({ data }) {
 export const getServerSideProps = async () => {
   const res = await axios.get("https://khemsafe.vercel.app/api/products");
   // const res = await axios.get("http://localhost:3000/api/products");
-  console.log(res);
 
   return {
     props: {

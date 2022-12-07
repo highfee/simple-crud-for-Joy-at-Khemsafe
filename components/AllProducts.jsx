@@ -7,9 +7,7 @@ const AllProducts = () => {
   const [data, setData] = useState(products);
   useEffect(() => {
     setData(products);
-    console.log(data);
   }, [data, products]);
-
   if (data.length < 1) {
     return <h1>Nothing to display yet</h1>;
   }
