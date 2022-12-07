@@ -12,6 +12,10 @@ export default function Home({ data }) {
   useEffect(() => {
     dispatch2({ type: "ALL_PRODUCTS", payload: { products: data } });
   }, [dispatch2, data]);
+
+  if (!data) {
+    return <div>Loading.......</div>;
+  }
   return (
     <div>
       <Head>
