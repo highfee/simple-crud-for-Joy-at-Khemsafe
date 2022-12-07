@@ -11,6 +11,7 @@ export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
   const { dispatch2 } = useContext(ProductContext);
 
+  console.log(data);
   useEffect(() => {
     dispatch2({ type: "ALL_PRODUCTS", payload: { products: data } });
   }, [dispatch2, data]);
