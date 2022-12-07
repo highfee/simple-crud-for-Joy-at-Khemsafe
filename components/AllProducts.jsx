@@ -7,7 +7,9 @@ const AllProducts = () => {
   const [data, setData] = useState([]);
   console.log(data);
   useEffect(() => {
-    setData(products);
+    setTimeout(() => {
+      setData(products);
+    }, 5000);
   }, [data, products]);
 
   return (
