@@ -10,9 +10,9 @@ const AllProducts = () => {
     console.log(data);
   }, [data, products]);
 
-  if (true) {
-    return <h1>Nothing to display yet</h1>;
-  }
+  // if (true) {
+  //   return <h1>Nothing to display yet</h1>;
+  // }
 
   return (
     <div>
