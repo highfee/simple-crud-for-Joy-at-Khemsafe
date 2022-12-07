@@ -15,7 +15,7 @@ export default function Home({ data }) {
     }, 3000);
   }, [dispatch2, data]);
 
-  if (!data) {
+  if (true) {
     return <div>Error.....</div>;
   }
   return (
@@ -42,8 +42,8 @@ export default function Home({ data }) {
 }
 
 export const getServerSideProps = async () => {
-  // const res = await axios.get("https://khemsafe.vercel.app/api/products");
-  const res = await axios.get("http://localhost:3000/api/products");
+  const res = await axios.get("https://khemsafe.vercel.app/api/products");
+  // const res = await axios.get("http://localhost:3000/api/products");
 
   return {
     props: {
