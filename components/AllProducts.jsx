@@ -19,8 +19,14 @@ const AllProducts = () => {
         {data.length < 1 ? (
           <p className="text-xl">No product.....</p>
         ) : (
-          <p>Is it working</p>
-          // data?.map((item) => <ProductCard key={item._id} product={item} />)
+          <>
+            <p>Is it working</p>
+            <div>
+              {data?.map((item) => (
+                <ProductCard key={item._id} product={item} />
+              ))}
+            </div>
+          </>
         )}
       </div>
     </div>

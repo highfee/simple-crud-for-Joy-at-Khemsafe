@@ -4,9 +4,9 @@ import { FaPlus } from "react-icons/fa";
 import { AddProduct, AllProducts, SearchBar } from "../components";
 import axios from "axios";
 import { ProductContext } from "../context/ProductsContext";
+import dbConnect from "../db";
 
 export default function Home({ data }) {
-  console.log(data);
   const [showModal, setShowModal] = useState(false);
   const { dispatch2 } = useContext(ProductContext);
 
@@ -41,8 +41,10 @@ export default function Home({ data }) {
 }
 
 export const getServerSideProps = async () => {
+  await dbConnect();
   const res = await axios.get("https://khemsafe.vercel.app/api/products");
   // const res = await axios.get("http://localhost:3000/api/products");
+  console.log(res);
 
   return {
     props: {
