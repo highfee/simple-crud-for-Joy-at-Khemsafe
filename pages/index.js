@@ -14,10 +14,7 @@ export default function Home({ data }) {
   const { dispatch2 } = useContext(ProductContext);
   console.log(data.data);
   useEffect(() => {
-    setTimeout(
       dispatch2({ type: "ALL_PRODUCTS", payload: { products: data } }),
-      3000
-    );
   }, [dispatch2, data]);
   return (
     <div>
