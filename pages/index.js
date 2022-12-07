@@ -10,7 +10,9 @@ export default function Home({ data }) {
   const { dispatch2 } = useContext(ProductContext);
 
   useEffect(() => {
-    dispatch2({ type: "ALL_PRODUCTS", payload: { products: data } });
+    setTimeout(() => {
+      dispatch2({ type: "ALL_PRODUCTS", payload: { products: data } });
+    }, 3000);
   }, [dispatch2, data]);
 
   if (!data) {
@@ -41,6 +43,7 @@ export default function Home({ data }) {
 
 export const getServerSideProps = async () => {
   const res = await axios.get("https://khemsafe.vercel.app/api/products");
+  // const res = await axios.get("http://localhost:3000/api/products");
 
   return {
     props: {
