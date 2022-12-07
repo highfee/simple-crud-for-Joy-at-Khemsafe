@@ -44,10 +44,6 @@ export default function Home({ data }) {
 
 export const getServerSideProps = async () => {
   await dbConnect();
-
-  // const res = await axios.get("https://khemsafe.vercel.app/api/products");
-  // const res = await axios.get("http://localhost:3000/api/products");
-  // console.log(res);
   const res = await Product.find();
   const products = res.map((doc) => {
     const product = doc.toObject();

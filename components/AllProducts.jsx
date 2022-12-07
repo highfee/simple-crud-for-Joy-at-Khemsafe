@@ -20,7 +20,6 @@ const AllProducts = () => {
           <p className="text-xl">No product.....</p>
         ) : (
           <>
-            <p>Is it working</p>
             <div>
               {data?.map((item) => (
                 <ProductCard key={item._id} product={item} />

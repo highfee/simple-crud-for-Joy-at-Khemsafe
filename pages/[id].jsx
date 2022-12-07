@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import dbConnect from "../db";
+import Program from "../models/productModel";
 import { FaArrowLeft } from "react-icons/fa";
 import CurrencyFormat from "react-currency-format";
 import { useRouter } from "next/router";
@@ -63,16 +64,23 @@ const Product = ({ data }) => {
   );
 };
 
-export const getServerSideProps = async (ctx) => {
-  const res = await axios.get(
-    `https://khemsafe.vercel.app/api/products/${ctx.params.id}`
-  );
-  // console.log(res.data);
+export const getServerSideProps = async ({ params }) => {
+  await dbConnect();
+  const res = await Program.findById(params.id).lean();
+  res._id = res._id.toString();
   return {
     props: {
-      data: res.data,
+      data: res,
     },
   };
 };
 
 export default Product;
+// const res = await axios.get(
+//   `https://khemsafe.vercel.app/api/products/638f7d2b381b5f224ab79f3c`
+// );
+// const data = res.map((doc) => {
+//   const product = doc.toObject();
+//   product._id = product._id.toString();
+//   return product;
+// });
