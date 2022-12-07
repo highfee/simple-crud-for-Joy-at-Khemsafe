@@ -2,13 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../context/ProductsContext";
 
 import ProductCard from "../components/ProductCard";
-const AllProducts = ({ data }) => {
-  // const { products } = useContext(ProductContext);
-  // const [data, setData] = useState([]);
-  // console.log(data);
-  // useEffect(() => {
-  //   setData(products);
-  // }, [data, products]);
+const AllProducts = () => {
+  const { products } = useContext(ProductContext);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    setData(products);
+    console.log(data);
+  }, [data, products]);
 
   return (
     <div>
