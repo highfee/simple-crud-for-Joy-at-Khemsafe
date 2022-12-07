@@ -5,6 +5,7 @@ import { AddProduct, AllProducts, SearchBar } from "../components";
 import axios from "axios";
 import { ProductContext } from "../context/ProductsContext";
 import dbConnect from "../db";
+import Product from "../models/productModel";
 
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
@@ -42,9 +43,11 @@ export default function Home({ data }) {
 
 export const getServerSideProps = async () => {
   await dbConnect();
-  const res = await axios.get("https://khemsafe.vercel.app/api/products");
+
+  // const res = await axios.get("https://khemsafe.vercel.app/api/products");
   // const res = await axios.get("http://localhost:3000/api/products");
-  console.log(res);
+  // console.log(res);
+  const res = await Product.find();
 
   return {
     props: {
