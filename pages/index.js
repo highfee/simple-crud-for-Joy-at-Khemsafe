@@ -15,8 +15,8 @@ export default function Home({ data }) {
     }, 3000);
   }, [dispatch2, data]);
 
-  if (true) {
-    return <div>Error.....</div>;
+  if (data.length < 1) {
+    return <div>Loading.....</div>;
   }
   return (
     <div>
