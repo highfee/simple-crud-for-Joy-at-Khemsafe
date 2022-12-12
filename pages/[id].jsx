@@ -76,11 +76,4 @@ export const getServerSideProps = async ({ params }) => {
 };
 
 export default Product;
-// const res = await axios.get(
-//   `https://khemsafe.vercel.app/api/products/638f7d2b381b5f224ab79f3c`
-// );
-// const data = res.map((doc) => {
-//   const product = doc.toObject();
-//   product._id = product._id.toString();
-//   return product;
-// });
+

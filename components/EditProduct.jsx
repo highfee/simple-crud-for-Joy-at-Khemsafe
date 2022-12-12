@@ -16,13 +16,6 @@ const EditProgram = ({ showModal, setShowModal, product, setProduct }) => {
   };
   const handleCancel = () => {
     setShowModal(false);
-    // setInputs({
-    //   name: "",
-    //   price: "",
-    //   quantity: "",
-    //   storage: "",
-    //   memory: "",
-    // });
   };
   const handleEdit = async () => {
     setLoading(true);
@@ -38,7 +31,7 @@ const EditProgram = ({ showModal, setShowModal, product, setProduct }) => {
         toast.success("Item updated succesfully");
       }
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong");
     }
   };
   return (
