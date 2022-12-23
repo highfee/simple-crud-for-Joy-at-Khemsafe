@@ -35,7 +35,7 @@ const AddProduct = ({ showModal, setShowModal }) => {
         setLoading(false);
         handleCancel();
         toast.success("Item added");
-        location.reload();
+        // location.reload();
       }
     } catch (error) {
       console.log(error);
