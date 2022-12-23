@@ -31,6 +31,7 @@ const AddProduct = ({ showModal, setShowModal }) => {
         inputs
       );
       if (res.data.message == "already exist") {
+        setLoading(false);
         return toast.error("Product already exist");
       }
       if (res) {
