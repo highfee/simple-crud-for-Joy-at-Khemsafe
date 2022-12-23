@@ -30,6 +30,7 @@ const AddProduct = ({ showModal, setShowModal }) => {
         "https://khemsafe.vercel.app/api/products",
         inputs
       );
+      console.log(res.data);
       if (res) {
         setLoading(false);
         handleCancel();

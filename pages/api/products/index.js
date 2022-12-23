@@ -24,8 +24,14 @@ export default async function handler(req, res) {
   }
 
   if (req.method === "POST") {
-    let product = new Product(body);
-    await product.save();
-    res.json(product);
+    let productExist = await Product.findOne({ name: body.name });
+
+    if (productExist) {
+      return res.json({ message: "already exist" });
+    } else {
+      let product = new Product(body);
+      await product.save();
+      res.json(product);
+    }
   }
 }
