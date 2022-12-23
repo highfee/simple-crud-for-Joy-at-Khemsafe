@@ -3,13 +3,20 @@ import Link from "next/link";
 import { useState } from "react";
 import CurrencyFormat from "react-currency-format";
 import { FaTrashAlt } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const ProductCard = ({ product }) => {
   const [deleteProduct, setDeleteProduct] = useState(false);
+  const [deleting, setDeleting] = useState(false);
   const handleDelete = async () => {
-    await axios.delete(
+    setDeleting(true);
+    const res = await axios.delete(
       `https://khemsafe.vercel.app/api/products/${product._id}`
     );
+    if (res) {
+      toast.success(`${product.name} deleted successfully`);
+      location.reload();
+    }
   };
   return (
     <div className="p-3 bg-white rounded-md shadow-sm shadow-gray-300 mb-4 flex relative">
@@ -37,7 +44,7 @@ const ProductCard = ({ product }) => {
             className="border-2 border-solid px-3 py-1 bg-lime-600 text-gray-300"
             onClick={handleDelete}
           >
-            Delete
+            {deleting ? "Deleting" : "Delete"}
           </button>
           <button
             onClick={(prev) => setDeleteProduct(false)}

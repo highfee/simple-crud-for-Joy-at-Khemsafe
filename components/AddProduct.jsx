@@ -42,7 +42,7 @@ const AddProduct = ({ showModal, setShowModal }) => {
   };
   return (
     <div
-      className="w-[90%] max-w-[600px] h-[500px] bg-white mx-auto rounded-2xl shadow-xl p-3 absolute top-1/2 translate-y-[-50%] left-1/2 translate-x-[-50%]"
+      className="w-[90%] max-w-[600px] h-[500px] bg-white mx-auto rounded-2xl shadow-xl p-3 fixed top-1/2 translate-y-[-50%] left-1/2 translate-x-[-50%]"
       style={{ display: `${showModal == true ? "block" : "none"}` }}
     >
       <h2 className="text-2xl text-gray-600 mb-3">Add new product</h2>
