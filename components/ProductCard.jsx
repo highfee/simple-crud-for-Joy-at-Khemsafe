@@ -37,7 +37,7 @@ const ProductCard = ({ product }) => {
         ) : (
           <FaTrashAlt
             className="absolute bottom-3 right-3 cursor-pointer"
-            onClick={(prev) => setDeleteProduct(false)}
+            onClick={(prev) => setDeleteProduct(true)}
           />
         )}
       </div>
