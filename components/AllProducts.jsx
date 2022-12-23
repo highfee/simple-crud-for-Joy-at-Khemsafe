@@ -15,7 +15,7 @@ const AllProducts = () => {
   return (
     <div>
       <header className="text-gray-700 text-2xl font-bold">All Items</header>
-      <div className="m-2 mt-3">
+      <div className="m-2 mt-3 mb-16">
         {data.length < 1 ? (
           <p className="text-xl">No product.....</p>
         ) : (
