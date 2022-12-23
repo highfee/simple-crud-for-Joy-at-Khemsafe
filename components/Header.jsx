@@ -2,7 +2,7 @@ import { FaBars } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="h-[60px] flex justify-between items-center sticky top-0 bg-white z-20">
+    <header className="h-[60px] flex justify-between items-center sticky top-0 bg-white z-50">
       <div>
         <FaBars />
       </div>

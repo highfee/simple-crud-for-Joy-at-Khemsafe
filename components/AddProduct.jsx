@@ -30,12 +30,14 @@ const AddProduct = ({ showModal, setShowModal }) => {
         "https://khemsafe.vercel.app/api/products",
         inputs
       );
-      console.log(res.data);
+      if (res.data.message == "already exist") {
+        return toast.error("Product already exist");
+      }
       if (res) {
         setLoading(false);
         handleCancel();
         toast.success("Item added");
-        // location.reload();
+        location.reload();
       }
     } catch (error) {
       console.log(error);
