@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
             Quantity remaining: <span>{product.quantity}</span>
           </p>
         </div>
-        <FaTrashAlt className="absolute top-3 right-3" />
+        <FaTrashAlt className="absolute bottom-3 right-3" />
       </div>
     </Link>
   );
