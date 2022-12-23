@@ -22,4 +22,8 @@ export default async function handler(req, res) {
     );
     res.json(product);
   }
+  if (req.method === "DELETE") {
+    const product = await Product.findByIdAndDelete(id);
+    res.json(product);
+  }
 }

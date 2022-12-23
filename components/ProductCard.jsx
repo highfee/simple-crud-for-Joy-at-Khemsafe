@@ -1,3 +1,4 @@
+import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
 import CurrencyFormat from "react-currency-format";
@@ -5,6 +6,11 @@ import { FaTrashAlt } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
   const [deleteProduct, setDeleteProduct] = useState(false);
+  const handleDelete = async () => {
+    await axios.delete(
+      `https://khemsafe.vercel.app/api/products/${product._id}`
+    );
+  };
   return (
     <div className="p-3 bg-white rounded-md shadow-sm shadow-gray-300 mb-4 flex relative">
       <Link href={`/${product._id}`} passHref>
@@ -27,7 +33,12 @@ const ProductCard = ({ product }) => {
       </Link>
       {deleteProduct ? (
         <div className="absolute flex gap-2 bottom-3 right-3">
-          <button className="border-2 border-solid px-3 py-1">Ok</button>
+          <button
+            className="border-2 border-solid px-3 py-1 bg-lime-600 text-gray-300"
+            onClick={handleDelete}
+          >
+            Delete
+          </button>
           <button
             onClick={(prev) => setDeleteProduct(false)}
             className="border-2 border-solid px-3 py-1"
